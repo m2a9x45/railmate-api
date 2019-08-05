@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 require('dotenv').config()
 const app = express()
 const port = 3000
+const hostname = require('os').hostname();
 
 const stationsJson =  require('./data/stations.json')
 
@@ -12,13 +13,13 @@ app.get('/', (req, res) => {
         "Endpoints" : [
             {
                 "name" : "/stations",
-                "link" : `http://localhost:${port}/stations`,
+                "link" : `http://${hostname}:${port}/stations`,
                 "type" : "GET",
                 "description" : "Gets all stations in the uk"
             },
             {
                 "name" : "/livedepatures/[STATION_CODE]",
-                "link" : `http://localhost:${port}/livedepatures/KGX`,
+                "link" : `http://${hostname}:${port}/livedepatures/KGX`,
                 "type" : "GET",
                 "description" : "Gets all the depatures for a station based on it's station code"
             }
@@ -46,7 +47,7 @@ app.get('/livedepatures/:code', (req, res) => {
 
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}! Link : http://localhost:3000/`))
+app.listen(port, () => console.log(`Example app listening on port ${port}! Link : http://${hostname}:${port}/`))
 
 
 
