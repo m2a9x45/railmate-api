@@ -5,7 +5,8 @@ const app = express()
 const port = 3000
 const hostname = require('os').hostname();
 
-const stationsJson =  require('./data/stations.json')
+const stationsJson =  require('./data/stations.json');
+const liveDepDate = require('./data/KGX.json');
 
 app.get('/', (req, res) => {
     res.json({
@@ -34,15 +35,17 @@ app.get('/stations', (req, res) => res.json(stationsJson))
 app.get('/livedepatures/:code', (req, res) => {
     console.log("Hit");
 
-    const stationcode = req.params.code;
+    // const stationcode = req.params.code;
 
-    const appID = process.env.APPID;
-    const API_KEY = process.env.API_KEY
-    const url = `https://transportapi.com/v3/uk/train/station/${stationcode}/live.json?app_id=${appID}&app_key=${API_KEY}&darwin=false&train_status=passenger`;
+    // const appID = process.env.APPID;
+    // const API_KEY = process.env.API_KEY
+    // const url = `https://transportapi.com/v3/uk/train/station/${stationcode}/live.json?app_id=${appID}&app_key=${API_KEY}&darwin=false&train_status=passenger`;
 
-    fetch(url)
-    .then(response => response.json())
-    .then(json => res.json(json));
+    // fetch(url)
+    // .then(response => response.json())
+    // .then(json => res.json(json));
+
+    res.json(liveDepDate);
 });
 
 
