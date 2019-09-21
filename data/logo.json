@@ -1,0 +1,69 @@
+[
+    {
+        "name" : "caledoniansleeper",
+        "operator_code" : "GS",
+        "img_url" : "http://de.prettyawful.net:3000/img/caledoniansleeper.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/caledoniansleeper.png"
+    },
+    {
+        "name" : "crosscountry",
+        "operator_code" : "XC",
+        "img_url" : "http://de.prettyawful.net:3000/img/crosscountry.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/crosscountry.png"
+
+    },
+    {
+        "name" : "gwr",
+        "operator_code" : "GW",
+        "img_url" : "http://de.prettyawful.net:3000/img/crosscountry.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/crosscountry.png"
+    },
+    {
+        "name" : "thameslink",
+        "operator_code" : ["Sn", "TL", "GX", "CC"],
+        "img_url" : "http://de.prettyawful.net:3000/img/thameslink.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/thameslink.png"
+    },
+    {
+        "name" : "greatnorthern",
+        "operator_code" : "GN",
+        "img_url" : "http://de.prettyawful.net:3000/img/greatnorthern.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/greatnorthern.png"
+    },
+    {
+        "name" : "eastmidlands",
+        "operator_code" : "EM",
+        "img_url" : "http://de.prettyawful.net:3000/img/eastmidlands.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/eastmidlands.png"
+    },
+    {
+        "name" : "lner",
+        "operator_code" : "GR",
+        "img_url" : "http://de.prettyawful.net:3000/img/lner.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/lner.png"
+    },
+    {
+        "name" : "londonoverground",
+        "operator_code" : "LO",
+        "img_url" : "http://de.prettyawful.net:3000/img/londonoverground.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/londonoverground.png"
+    },
+    {
+        "name" : "scotrail",
+        "operator_code" : "SR",
+        "img_url" : "http://de.prettyawful.net:3000/img/scotrail.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/scotrail.png"
+    },
+    {
+        "name" : "transpennineexpress",
+        "operator_code" : "TP",
+        "img_url" : "http://de.prettyawful.net:3000/img/transpennineexpress.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/transpennineexpress.png"
+    },
+    {
+        "name" : "northern",
+        "operator_code" : "NT",
+        "img_url" : "http://de.prettyawful.net:3000/img/northern.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/northern.png"
+    }
+]
