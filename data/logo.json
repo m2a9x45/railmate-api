@@ -15,8 +15,8 @@
     {
         "name" : "gwr",
         "operator_code" : "GW",
-        "img_url" : "http://de.prettyawful.net:3000/img/crosscountry.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/crosscountry.png"
+        "img_url" : "http://de.prettyawful.net:3000/img/gwr.png",
+        "dev_img_url" : "http://10.0.2.2:3000/img/gwr.png"
     },
     {
         "name" : "thameslink",
