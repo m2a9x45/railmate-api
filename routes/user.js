@@ -1,7 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
-// const fetch = require('node-fetch');
+const fetch = require('node-fetch');
 // const sgMail = require('@sendgrid/mail');
 const joi = require('@hapi/joi');
 
@@ -22,6 +22,41 @@ const schema = joi.object({
     .required(),
 });
 
+function notifySlack(user) {
+  const body = {
+    text: 'Someone new has registered interest in the app',
+    attachments: [
+      {
+        fields: [
+          {
+            title: 'Email',
+            value: `${user.email}`,
+            short: true,
+          },
+          {
+            title: 'Name',
+            value: `${user.name}`,
+            short: true,
+          },
+          {
+            title: 'OS',
+            value: `${user.os}`,
+            short: true,
+          },
+        ],
+        color: '#F35A00',
+      },
+    ],
+
+  };
+
+  fetch(process.env.SLACK_URL, {
+    method: 'post',
+    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
+
 router.get('/interest/download/:os/:id', (req, res) => {
   const { os } = req.params;
   const { id } = req.params;
@@ -29,7 +64,7 @@ router.get('/interest/download/:os/:id', (req, res) => {
   // console.log(os, id);
 
   if (os === 'null' || id === 'null') {
-    res.redirect('http://localhost/dev/railmate/');
+    res.redirect('http://railmate.net/');
   } else {
     User.findAll({
       where: {
@@ -41,14 +76,14 @@ router.get('/interest/download/:os/:id', (req, res) => {
 
       if (user.length !== 0) {
         if (os === 'android') {
-          const file = './files/app-debug-v-1.5.apk';
+          const file = './files/railmate-1.5.apk';
           // console.log('downloading...');
           res.download(file);
         } else {
-          res.redirect('http://localhost/dev/railmate/ios');
+          res.redirect('http://railmate.net/ios/');
         }
       } else {
-        res.redirect('http://localhost/dev/railmate/');
+        res.redirect('http://railmate.net/');
       }
     });
   }
@@ -83,7 +118,7 @@ router.post('/interest', (req, res) => {
             })
               .then((createdUser) => {
                 // console.log('user added to db');
-                // notifySlack(user);
+                notifySlack(createdUser);
                 // sendEmail(user.email, user.os, user.name);
                 res.json(createdUser);
               }).catch(() => {
@@ -120,41 +155,6 @@ router.post('/interest', (req, res) => {
     });
   }
 });
-
-// function notifySlack(user) {
-//   const body = {
-//     text: 'Someone new has registered interest in the app',
-//     attachments: [
-//       {
-//         fields: [
-//           {
-//             title: 'Email',
-//             value: `${user.email}`,
-//             short: true,
-//           },
-//           {
-//             title: 'Name',
-//             value: `${user.name}`,
-//             short: true,
-//           },
-//           {
-//             title: 'OS',
-//             value: `${user.os}`,
-//             short: true,
-//           },
-//         ],
-//         color: '#F35A00',
-//       },
-//     ],
-
-//   };
-
-//   fetch(process.env.SLACK_URL, {
-//     method: 'post',
-//     body: JSON.stringify(body),
-//     headers: { 'Content-Type': 'application/json' },
-//   });
-// }
 
 // function sendEmail(email, os, name) {
 //   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
