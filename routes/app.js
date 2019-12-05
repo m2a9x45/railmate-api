@@ -1,7 +1,9 @@
 const express = require('express');
 const fetch = require('node-fetch');
+
 const stationsJson = require('../data/stations.json');
 const logoData = require('../data/logo.json');
+const metricsRoute = require('../routes/metrics.js');
 
 const router = express.Router();
 
@@ -12,11 +14,14 @@ router.get('/', (req, res) => {
 });
 
 // Gets all stations in the uk
-router.get('/stations', (req, res) => res.json(stationsJson));
+router.get('/stations', (req, res) => {
+  metricsRoute.counter.inc({ route: '/stations', type: 'get' });
+  res.json(stationsJson);
+});
 
 // Gets all the depatures for a station based on it's station code
 router.get('/livedepatures/:code', (req, res) => {
-  // console.log('Hit');
+  metricsRoute.counter.inc({ route: '/livedepatures', type: 'get' });
 
   const stationcode = req.params.code;
 
@@ -33,6 +38,7 @@ router.get('/livedepatures/:code', (req, res) => {
 
 // Gets the live or test img url of the train operator
 router.get('/operator/:id/:dev', (req, res) => {
+  metricsRoute.counter.inc({ route: '/operator', type: 'get' });
   const { id } = req.params;
   const { dev } = req.params;
 

@@ -8,6 +8,7 @@ const joi = require('@hapi/joi');
 require('dotenv').config();
 
 const User = require('../db/models/UserModel.js');
+const metricsRoute = require('../routes/metrics.js');
 
 
 const schema = joi.object({
@@ -58,6 +59,7 @@ function notifySlack(user) {
 }
 
 router.get('/interest/download/:os/:id', (req, res) => {
+  metricsRoute.counter.inc({ route: '/interest/download', type: 'get' });
   const { os } = req.params;
   const { id } = req.params;
 
@@ -90,6 +92,7 @@ router.get('/interest/download/:os/:id', (req, res) => {
 });
 
 router.post('/interest', (req, res) => {
+  metricsRoute.counter.inc({ route: '/interest', type: 'post' });
   let doesEmailExist = false;
 
   const { name } = req.body;
