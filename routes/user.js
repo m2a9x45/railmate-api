@@ -9,6 +9,7 @@ require('dotenv').config();
 
 const User = require('../db/models/UserModel.js');
 const metricsRoute = require('../routes/metrics.js');
+const MailGun = require('../adaptors/mail');
 
 
 const schema = joi.object({
@@ -122,7 +123,7 @@ router.post('/interest', (req, res) => {
               .then((createdUser) => {
                 // console.log('user added to db');
                 notifySlack(createdUser);
-                // sendEmail(user.email, user.os, user.name);
+                MailGun(email);
                 res.json(createdUser);
               }).catch(() => {
                 // console.log(err);
@@ -158,22 +159,5 @@ router.post('/interest', (req, res) => {
     });
   }
 });
-
-// function sendEmail(email, os, name) {
-//   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-//   const msg = {
-//     to: email,
-//     from: {
-//       email: 'Hi@railmate.net',
-//       name: 'Railmate',
-//     },
-//     subject: 'Thanks for letting us know',
-//     text: `Hi ${name}, thanks for letting us know you would
-//     be intrested in the railmate app for ${os}`,
-//     html: `<p>Hi ${name}, thanks for letting us know you
-//     would be intrested in the railmate app for ${os}</p>`,
-//   };
-//   sgMail.send(msg);
-// }
 
 module.exports = router;
