@@ -16,7 +16,7 @@ const metricsRoute = require('./routes/metrics.js');
 const db = require('./db/conn.js');
 
 const corsOptions = {
-  origin: ['http://railmate.net', 'http://dev.railmate.net'],
+  origin: ['http://railmate.net', 'http://dev.railmate.net', 'http://localhost'],
   optionsSuccessStatus: 200,
 };
 
