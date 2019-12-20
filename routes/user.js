@@ -79,7 +79,7 @@ router.get('/interest/download/:os/:id', (req, res) => {
 
       if (user.length !== 0) {
         if (os === 'android') {
-          const file = './files/railmate-1.5.apk';
+          const file = './files/railmate.apk';
           // console.log('downloading...');
           res.download(file);
         } else {
