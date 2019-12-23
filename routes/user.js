@@ -20,9 +20,14 @@ const schema = joi.object({
     .required(),
 
   email: joi.string()
-    .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ac', 'uk'] } })
+    .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ac', 'uk', 'co'] } })
     .required(),
 });
+
+const sarSchema = joi.object({
+  email: joi.string()
+  .email({minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ac', 'uk', 'co']}}) 
+})
 
 function notifySlack(user) {
   const body = {
@@ -123,7 +128,7 @@ router.post('/interest', (req, res) => {
               .then((createdUser) => {
                 // console.log('user added to db');
                 notifySlack(createdUser);
-                MailGun(email);
+                MailGun.sendEmail(email);
                 res.json(createdUser);
               }).catch(() => {
                 // console.log(err);
@@ -153,6 +158,62 @@ router.post('/interest', (req, res) => {
       });
     }
   } catch (err) {
+    res.json({
+      message: 'Something went wrong please try again',
+      error: true,
+    });
+  }
+});
+
+router.post('/sar', (req, res) => {
+  metricsRoute.counter.inc({ route: '/sar', type: 'post' });
+  const { email } = req.body;
+  // console.log(email);
+
+  try {
+    const value = sarSchema.validate({ email });
+    // console.log('value', value);
+
+    if (!value.error) {
+      User.findOne({
+        where: {
+          email: email,
+        }
+      }).then(user => {
+        console.log(user);
+
+        if (user != null) {
+
+          // const email = user.dataValues.email;
+          // const name = user.dataValues.name;
+          // const os = user.dataValues.os;
+          // const signupTime = user.dataValues.createdAt;
+
+          // console.log(email,name,os,signupTime);
+          
+          MailGun.sendSarData(email, name, os, signupTime)
+
+          res.json({
+            message: 'Your data\'s on it\'s way 📧',
+            error: false,
+          });
+        } else {
+          res.json({
+            message: 'It doesn\'t look like we store any of your data 🔐',
+            error: true,
+          });
+        }
+      });
+
+    } else {
+      res.json({
+        message: 'It looks like you might have not enter an vaild email ',
+        error: true,
+      });
+    }
+
+
+  } catch (error) {
     res.json({
       message: 'Something went wrong please try again',
       error: true,
