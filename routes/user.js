@@ -184,10 +184,10 @@ router.post('/sar', (req, res) => {
 
         if (user != null) {
 
-          // const email = user.dataValues.email;
-          // const name = user.dataValues.name;
-          // const os = user.dataValues.os;
-          // const signupTime = user.dataValues.createdAt;
+          const email = user.dataValues.email;
+          const name = user.dataValues.name;
+          const os = user.dataValues.os;
+          const signupTime = user.dataValues.createdAt;
 
           // console.log(email,name,os,signupTime);
           
