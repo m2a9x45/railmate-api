@@ -64,4 +64,21 @@ router.get('/operator/:id/:dev', (req, res) => {
   }
 });
 
+router.get('/timetable/:code/:date/:time', (req, res) =>{
+  metricsRoute.counter.inc({ route: '/timetable', type: 'get' });
+  
+  const code = req.params.code; // EDB
+  const date = req.params.date; // 2019-12-28
+  const time = req.params.time; // 17:26
+
+  const appID = process.env.APPID;
+  const { API_KEY } = process.env;
+
+  const url = `https://transportapi.com/v3/uk/train/station/${code}/${date}/${time}/timetable.json?app_id=${appID}&app_key=${API_KEY}&train_status=passenger`
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => res.json(json));
+});
+
 module.exports = router;
