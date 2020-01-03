@@ -60,11 +60,7 @@ router.get('/operator/:id/:dev', (req, res) => {
       res.json({
         img_url: (dev === 'true') ? logoData[i].dev_img_url : logoData[i].img_url,
       });
-    } else {
-      res.json({
-        message : "Logo not found"
-      })
-    }
+    } 
   }
 });
 
