@@ -43,8 +43,8 @@ db.authenticate()
 app.get('/', (req, res) => {
   metricsRoute.counter.inc({ route: '/' });
   res.json({
-    host: 'localhost',
-    name: 'Railamte api',
+    host: 'api.railmate.net',
+    name: 'Railmate API',
   });
 });
 
