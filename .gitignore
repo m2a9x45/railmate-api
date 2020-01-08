@@ -1,3 +1,4 @@
 .env
 public/img
 node_modules
+public/newImg

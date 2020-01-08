@@ -1,69 +1,170 @@
 [
     {
-        "name" : "caledoniansleeper",
-        "operator_code" : "GS",
-        "img_url" : "http://api.railmate.net/img/caledoniansleeper.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/caledoniansleeper.png"
-    },
-    {
-        "name" : "crosscountry",
-        "operator_code" : "XC",
-        "img_url" : "http://api.railmate.net/img/crosscountry.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/crosscountry.png"
-
-    },
-    {
-        "name" : "gwr",
-        "operator_code" : "GW",
-        "img_url" : "http://api.railmate.net/img/gwr.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/gwr.png"
-    },
-    {
-        "name" : "thameslink",
-        "operator_code" : ["Sn", "TL", "GX", "CC"],
-        "img_url" : "http://api.railmate.net/img/thameslink.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/thameslink.png"
-    },
-    {
-        "name" : "greatnorthern",
-        "operator_code" : "GN",
-        "img_url" : "http://api.railmate.net/img/greatnorthern.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/greatnorthern.png"
-    },
-    {
-        "name" : "eastmidlands",
-        "operator_code" : "EM",
-        "img_url" : "http://api.railmate.net/img/eastmidlands.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/eastmidlands.png"
-    },
-    {
-        "name" : "lner",
-        "operator_code" : "GR",
-        "img_url" : "http://api.railmate.net/img/lner.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/lner.png"
-    },
-    {
-        "name" : "londonoverground",
-        "operator_code" : "LO",
-        "img_url" : "http://api.railmate.net/img/londonoverground.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/londonoverground.png"
-    },
-    {
-        "name" : "scotrail",
+        "name" : "ScotRail",
         "operator_code" : "SR",
-        "img_url" : "http://api.railmate.net/img/scotrail.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/scotrail.png"
+        "img_url" : "http://api.railmate.net/newImg/ScotRail.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/ScotRail.jpg"
     },
     {
-        "name" : "transpennineexpress",
-        "operator_code" : "TP",
-        "img_url" : "http://api.railmate.net/img/transpennineexpress.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/transpennineexpress.png"
+        "name" : "London Overground",
+        "operator_code" : "LO",
+        "img_url" : "http://api.railmate.net/newImg/LDNOverground.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/LDNOverground.jpg"
     },
     {
-        "name" : "northern",
+        "name" : "Avanti West Coast",
+        "operator_code" : "VT",
+        "img_url" : "http://api.railmate.net/newImg/AvantiWestCoast.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/AvantiWestCoast.jpg"
+    },
+    {
+        "name" : "c2c",
+        "operator_code" : "CC",
+        "img_url" : "http://api.railmate.net/newImg/c2c_Rail.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/c2c_Rail.jpg"
+    },
+    {
+        "name" : "Caledonian Sleeper",
+        "operator_code" : "CS",
+        "img_url" : "http://api.railmate.net/newImg/CalSleeper.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/CalSleeper.jpg"
+    },
+    {
+        "name" : "Chiltern Railways",
+        "operator_code" : "CH",
+        "img_url" : "http://api.railmate.net/newImg/chilternrailway.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/chilternrailway.jpg"
+    },
+    {
+        "name" : "CrossCountry",
+        "operator_code" : "XC",
+        "img_url" : "http://api.railmate.net/newImg/CrossCountryUK.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/CrossCountryUK.jpg"
+    },
+    {
+        "name" : "East Midlands Railway",
+        "operator_code" : "EM",
+        "img_url" : "http://api.railmate.net/newImg/EastMidRailway.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/EastMidRailway.jpg"
+    },
+    {
+        "name" : "Eurostar",
+        "operator_code" : "ES",
+        "img_url" : "http://api.railmate.net/newImg/Eurostar.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/Eurostar.jpg"
+    },
+    {
+        "name" : "Eurostar",
+        "operator_code" : "ES",
+        "img_url" : "http://api.railmate.net/newImg/Eurostar.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/Eurostar.jpg"
+    },
+    {
+        "name" : "Thameslink",
+        "operator_code" : "TL",
+        "img_url" : "http://api.railmate.net/newImg/TLRailUK.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/TLRailUK.jpg"
+    },
+    {
+        "name" : "Southern",
+        "operator_code" : "SN",
+        "img_url" : "http://api.railmate.net/newImg/SouthernRailUK.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/SouthernRailUK.jpg"
+    },
+    {
+        "name" : "Great Northern",
+        "operator_code" : "GN",
+        "img_url" : "http://api.railmate.net/newImg/GNRailUK.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/GNRailUK.jpg"
+    },
+    {
+        "name" : "Gatwick Express",
+        "operator_code" : "GX",
+        "img_url" : "http://api.railmate.net/newImg/GatwickExpress.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/GatwickExpress.jpg"
+    },
+    {
+        "name" : "Grand Central",
+        "operator_code" : "GC",
+        "img_url" : "http://api.railmate.net/newImg/GC_Rail.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/GC_Rail.jpg"
+    },
+    {
+        "name" : "Great Western Railway",
+        "operator_code" : "GW",
+        "img_url" : "http://api.railmate.net/newImg/GWRHelp.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/GWRHelp.jpg"
+    },
+    {
+        "name" : "Greater Anglia",
+        "operator_code" : "LE",
+        "img_url" : "http://api.railmate.net/newImg/greateranglia.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/greateranglia.jpg"
+    },
+    {
+        "name" : "Heathrow Express",
+        "operator_code" : "HX",
+        "img_url" : "http://api.railmate.net/newImg/HeathrowExpress.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/HeathrowExpress.jpg"
+    },
+    {
+        "name" : "Hull Trains",
+        "operator_code" : "HT",
+        "img_url" : "http://api.railmate.net/newImg/Hull_Trains.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/Hull_Trains.jpg"
+    },
+    {
+        "name" : "London North Eastern Railway",
+        "operator_code" : "GR",
+        "img_url" : "http://api.railmate.net/newImg/LNER.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/LNER.jpg"
+    },
+    {
+        "name" : "Merseyrail",
+        "operator_code" : "ME",
+        "img_url" : "http://api.railmate.net/newImg/merseyrail.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/merseyrail.jpg"
+    },
+    {
+        "name" : "Northern",
         "operator_code" : "NT",
-        "img_url" : "http://api.railmate.net/img/northern.png",
-        "dev_img_url" : "http://10.0.2.2:3000/img/northern.png"
+        "img_url" : "http://api.railmate.net/newImg/northernassist.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/northernassist.jpg"
+    },
+    {
+        "name" : "South Western Railway",
+        "operator_code" : ["SW","IL"],
+        "img_url" : "http://api.railmate.net/newImg/sw_help.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/sw_help.jpg"
+    },
+    {
+        "name" : "Southeastern",
+        "operator_code" : "SE",
+        "img_url" : "http://api.railmate.net/newImg/Se_Railway.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/Se_Railway.jpg"
+    },
+    {
+        "name" : "TfL Rail",
+        "operator_code" : "XR",
+        "img_url" : "http://api.railmate.net/newImg/TfLRail.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/TfLRail.jpg"
+    },
+    {
+        "name" : "TransPennine Express",
+        "operator_code" : "TP",
+        "img_url" : "http://api.railmate.net/newImg/TPExpressTrains.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/TPExpressTrains.jpg"
+    },
+    {
+        "name" : "Transport for Wales",
+        "operator_code" : "AW",
+        "img_url" : "http://api.railmate.net/newImg/tfwrail.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/tfwrail.jpg"
+    },
+    {
+        "name" : "West Midlands Trains",
+        "operator_code" : "LM",
+        "img_url" : "http://api.railmate.net/newImg/WestMidRailway.jpg",
+        "dev_img_url" : "http://localhost:3060/newImg/WestMidRailway.jpg"
     }
 ]
