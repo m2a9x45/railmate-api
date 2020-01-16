@@ -98,6 +98,7 @@ router.get('/interest/download/:os/:id', (req, res) => {
 });
 
 router.get('/download', (req, res) => {
+  metricsRoute.counter.inc({ route: '/download', type: 'get' });
   const file = './files/railmate.apk';
   res.download(file);
 });
