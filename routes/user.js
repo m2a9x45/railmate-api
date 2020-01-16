@@ -97,6 +97,11 @@ router.get('/interest/download/:os/:id', (req, res) => {
   }
 });
 
+router.get('/download', (req, res) => {
+  const file = './files/railmate.apk';
+  res.download(file);
+});
+
 router.post('/interest', (req, res) => {
   metricsRoute.counter.inc({ route: '/interest', type: 'post' });
   let doesEmailExist = false;
